@@ -86,6 +86,14 @@ class Dev(Configuration):
   CRISPY_TEMPLATE_PACK = "bootstrap5"
 
   INTERNAL_IPS = ["192.168.10.226"] #IPs allowed to view django toolbar
+  
+  SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+    "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+    "Basic": {"type": "basic"},
+    }
+  }
+
 
   # this we will need to stop DJ failing because we dont have username field
   ACCOUNT_USER_MODEL_USERNAME_FIELD = None
@@ -127,6 +135,7 @@ class Dev(Configuration):
       "allauth.socialaccount.providers.google",
       "rest_framework",
       "rest_framework.authtoken",
+      "drf_yasg",
 
 
   ]
