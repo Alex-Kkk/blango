@@ -9,6 +9,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 # Create your views here.
+
+def post_table(request):
+    return render(request, "blog/post-table.html")
+    
 def index(request):
     posts = Post.objects.filter(published_at__lte=timezone.now()).select_related("author") #also select related
     logger.debug("Got %d posts", len(posts))
