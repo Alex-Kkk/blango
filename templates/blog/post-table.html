@@ -2,6 +2,9 @@
 {% load static %}
 {% block title %}Post Table{% endblock %}
 {% block content %}
+<script>
+    const postListUrl = '{{ post_list_url|escapejs }}'
+</script>
 <div class="row">
     <div class="col">
         <div id="react_root"></div>
